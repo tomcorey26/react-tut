@@ -1,0 +1,31 @@
+
+https://create-react-app.dev/docs/adding-typescript/
+https://github.com/typescript-cheatsheets/react#reacttypescript-cheatsheets
+
+fetch('https://pokeapi.co/api/v2/pokemon/ditto').then(async data => {
+    let foo = await data.json()
+    console.log(foo)
+})
+
+  const [index, setIndex] = useState<string>('1');
+  
+      {index}
+      <input
+        type="number"
+        value={index}
+        onChange={(e) => setIndex(e.target.value)}
+      />
+
+  useEffect(() => {
+    fetch(`https://pokeapi.co/api/v2/pokemon/${index}`)
+      .then((data) => data.json())
+      .then((data) => setPokemon(data));
+  }, [index]);
+
+interface Pokemon {
+  name: string;
+  id: number;
+  sprites: {
+    front_default: string;
+  };
+}

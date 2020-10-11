@@ -1,0 +1,18 @@
+.card {
+  margin: auto;
+  width: 200px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+}
+.def {
+  display: flex;
+  justify-content: space-around;
+}
+
+.sprite {
+  height: 50%;
+}
+.info {
+  height: 50%;
+}
