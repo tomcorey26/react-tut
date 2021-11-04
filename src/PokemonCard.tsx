@@ -1,7 +1,7 @@
-import { link } from 'fs';
 import React from 'react';
 import './PokemonCard.css';
 import { Pokemon } from './types';
+import { capitalize } from 'lodash';
 
 interface Move {
   name: string;
@@ -10,19 +10,37 @@ interface Move {
 
 interface PokemonCardProps extends Partial<Pokemon> {}
 
-export const PokemonCard: React.FC<PokemonCardProps> = ({ moves, name }) => {
+export const PokemonCard: React.FC<PokemonCardProps> = ({
+  moves,
+  name,
+  sprites,
+}) => {
   return (
     <div className="card">
-      <div className="sprite"></div>
+      <div className="sprite">
+        <img
+          style={{ height: '90%', width: '70%', objectFit: 'contain' }}
+          src={sprites?.front_shiny}
+          alt=""
+        />
+      </div>
       <div className="info">
         <div className="def">
-          <h1>{name}</h1>
+          <h1>{capitalize(name)}</h1>
         </div>
-        <ul>
+        <div className="moves">
           {moves?.map((m, i) =>
-            i < 4 ? <li key={i}>{m.move.name}</li> : null
+            i < 4 ? (
+              <div
+                key={m.move.name}
+                style={{ display: 'flex', justifyContent: 'space-between' }}
+              >
+                <div key={i}>{m.move.name}</div>
+                <div className="ball">20</div>
+              </div>
+            ) : null
           )}
-        </ul>
+        </div>
       </div>
     </div>
   );

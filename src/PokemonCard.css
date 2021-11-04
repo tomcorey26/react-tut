@@ -1,17 +1,29 @@
 .card {
   margin: auto;
-  width: 200px;
+  width: 300px;
   height: 400px;
   display: flex;
   flex-direction: column;
+  border-radius: 8px;
+  border: 10px solid #ffcb05;
+  background-color: hsl(28.1, 86.3%, 71.37%);
 }
 .def {
   display: flex;
   justify-content: space-around;
 }
 
+.moves {
+  text-align: left;
+  width: 80%;
+  margin: auto;
+}
+
 .sprite {
-  height: 50%;
+  height: 40%;
+  width: 90%;
+  background-color: white;
+  margin: auto;
 }
 .info {
   height: 50%;

@@ -21,9 +21,7 @@ const App = () => {
       <h1>{index}</h1>
       <input type="number" onChange={(e) => setIndex(e.target.value)} />
       <h1>yoyoyoyo</h1>
-      {pokemon ? (
-        <PokemonCard name={pokemon.name} moves={pokemon.moves} />
-      ) : null}
+      {pokemon ? <PokemonCard {...pokemon} /> : null}
       {/* <StaleClosure /> */}
     </div>
   );
